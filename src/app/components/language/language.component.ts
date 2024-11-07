@@ -26,7 +26,7 @@ export class LanguageComponent {
     this.translate.use('es');
    }
 
-   setCurrentLanguage() {
+  setCurrentLanguage() {
     this.languageSelected = this.translate.currentLang;
   }
 

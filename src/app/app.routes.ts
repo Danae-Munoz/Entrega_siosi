@@ -37,5 +37,11 @@ export const routes: Routes = [
   {
     path: 'registrarme',
     loadComponent: () => import('./pages/registrarme/registrarme.page').then( m => m.RegistrarmePage)
+  },
+  
+  {
+    path: 'theme',
+    loadComponent: () => import('./pages/theme/theme.page').then( m => m.ThemePage)
   }
+
 ];

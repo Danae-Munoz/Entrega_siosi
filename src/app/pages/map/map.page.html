@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <!-- El div con id "mapId" será donde se mostrará el mapa -->
+  <div id="mapId" style="height: 100%;"></div>
+</ion-content>
+
+<!-- Este es tu footer personalizado -->
+<ion-footer class="custom-footer">
+  <ion-toolbar class="ion-text-center" >
+    <ion-button  shape="round"  size="small" (click)="goToDUOC()">
+      DUOC
+    </ion-button>
+
+    <ion-button shape="round" size="small" (click)="goToMyPosition()">
+      Aquí
+    </ion-button>
+
+    <ion-button shape="round"  size="small" (click)="showRouteToDuoc()">
+      Ruta
+    </ion-button>
+
+    <div *ngIf="distance">
+      <br>
+      {{ distance }}
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
+
+

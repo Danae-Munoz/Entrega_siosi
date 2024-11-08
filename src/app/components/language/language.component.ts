@@ -1,9 +1,8 @@
-import { Component, EventEmitter, Output  } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-
 
 @Component({
   selector: 'app-language',
@@ -18,13 +17,15 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class LanguageComponent {
+
   @Output() changeCurrentLanguage = new EventEmitter();
+  
 
   languageSelected = "es";
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService) { 
     this.translate.use('es');
-   }
+  }
 
   setCurrentLanguage() {
     this.languageSelected = this.translate.currentLang;

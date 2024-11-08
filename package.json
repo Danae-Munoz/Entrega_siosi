@@ -37,7 +37,6 @@
     "@ionic/angular": "^7.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "@ngx-translate/core": "^16.0.3",
-    "@ngx-translate/http-loader": "^16.0.0",
     "ionicons": "^7.0.0",
     "jsqr": "^1.4.0",
     "native-run": "^1.7.2",

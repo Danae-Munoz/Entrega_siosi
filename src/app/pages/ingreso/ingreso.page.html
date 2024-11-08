@@ -1,82 +1,43 @@
-<ion-header [translucent]="true">  
-  <ion-toolbar>  
-    <ion-col size-md="6">  
-      <ion-img src="/assets/icon/logo-duoc.png" class="logo ion-margin-left"></ion-img>  
-    </ion-col>  
-    <ion-col size-md="12">  
-      <div class="ion-title">Sistema de Asistencia DUOCUC</div>  
-    </ion-col>  
-    <ion-col size-md="6"></ion-col>  
-  </ion-toolbar>  
-</ion-header>  
+<ion-header>
+  <ion-toolbar class="transparent-bg">
+    <div slot="start" class="ion-margin idioma" >
+      <app-language #selectLanguage></app-language>
+    </div>
+    <div class="show-in-landscape">
+      <h1 class="glow-text"> {{ 'AppName' | translate }} </h1>
+    </div>
+    <div slot="end" class="ion-margin">
+      <ion-button class="orange-buton" shape="round" size="small" (click)="navigateTheme()">
+        Tema
+        <ion-icon slot="start" name="color-wand-outline"></ion-icon>
+      </ion-button>
+    </div>
+   </ion-toolbar>
+</ion-header>
 
-<ion-header>  
-  <ion-toolbar class="transparent-bg">  
-    <div slot="start" class="ion-margin idioma">  
-      <app-language #selectLanguage></app-language>  
-    </div>  
-    <div class="show-in-landscape">  
-      <h1 class="glow-text">{{ 'AppName' | translate }}</h1>  
-    </div>  
-    <div slot="end" class="ion-margin">  
-      <ion-button class="orange-buton" shape="round" size="small" (click)="navigateTheme()">  
-        Tema  
-        <ion-icon slot="start" name="color-wand-outline"></ion-icon>  
-      </ion-button>  
-    </div>  
-  </ion-toolbar>  
-</ion-header>  
 
-<ion-content [fullscreen]="true">  
-  <img class="background-image" src="/assets/icon/c-28b93bf742.webp" style="position: absolute; right: 0; top: 0; z-index: -100; width: 100%; height: 100%;">  
-  
-  <h1 class="glow-text show-in-portrait margin-top-6">{{ 'AppName' | translate }}</h1>  
-
-  <ion-card class="login-container transparent-input">  
-    <ion-card-header class="show-in-portrait">  
-      <ion-card-title color="light" class="glow-text">  
-        <h4><b>{{ 'Login.Title.Login' | translate }}</b></h4>  
-      </ion-card-title>  
-    </ion-card-header>  
-
-    <ion-card-content class="transparent-input text-center">  
-      <ion-item class="margin-bottom-6 float-left-landscape">  
-        <ion-input   
-          label="{{ 'Login.Label.Cuenta' | translate }}"   
-          labelPlacement="floating"  
-          [(ngModel)]="correo"   
-          placeholder="{{ 'Login.Placeholder.Cuenta' | translate }}">  
-        </ion-input>  
-      </ion-item>  
-
-      <ion-item class="margin-bottom-6 float-right-landscape">  
-        <ion-input   
-          label="{{ 'Login.Label.Password' | translate }}"  
-          labelPlacement="floating"  
-          [(ngModel)]="password"   
-          placeholder="{{ 'Login.Placeholder.Password' | translate }}"  
-          type="password">  
-        </ion-input>  
-      </ion-item>  
-
-      <div class="ion-text-center margin-top-6" style="clear: both;">  
-        <ion-button class="enter-button normal-text orange-buton" shape="round" (click)="ingresar()">  
-          {{ 'Login.Button.Login' | translate }}  
-        </ion-button>  
-      </div>  
-    </ion-card-content>  
-  </ion-card>  
-
-  <div class="ion-text-center">  
-    <ion-button class="orange-buton" shape="block" (click)="passwordRecovery()">  
-      {{ 'Login.Button.ForgotPassword' | translate }}  
-    </ion-button>  
-    <ion-button class="orange-buton" shape="block" (click)="registerNewUser()">  
-      {{ 'Login.Button.Signin' | translate }}  
-    </ion-button>  
-  </div>  
-</ion-content>  
-
-<ion-footer>  
-  <!-- Puedes agregar contenido para el footer aquí si es necesario -->  
-</ion-footer>
+<ion-content>
+  <img src="/assets/icon/c-28b93bf742.webp" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; WIDTH:100%; height: 100%;">
+  <div class="centrado-vertical">
+    <ion-card-content class="login ion-fade-in-up ion-animatable">
+      <ion-item>
+        <ion-input id="correo" [(ngModel)]="correo" type="text" label="Correo" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="password" [(ngModel)]="password" type="password" label="Contraseña" labelPlacement="floating"></ion-input>
+      </ion-item>
+    
+      <div class="alinear-centro">
+        <ion-button (click)="ingresar()" class="">
+          Ingresar
+        </ion-button>
+        <ion-button (click)="registro()" class="">
+          Quiero Registrarme
+        </ion-button>
+        <ion-button (click)="contrasena()" class="">
+          He olvidado mi contraseña
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </div>
+</ion-content>

@@ -1,20 +1,18 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { showToast } from 'src/app/tools/message-routines';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { LanguageComponent } from 'src/app/components/language/language.component';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ingreso',
   templateUrl: './ingreso.page.html',
   styleUrls: ['./ingreso.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, TranslateModule , LanguageComponent],
+  imports: [IonicModule, CommonModule, FormsModule],
   animations: [
     trigger('slideInOut', [
       transition(':enter', [
@@ -28,13 +26,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   ]
 })
 export class IngresoPage implements OnInit {
-  @ViewChild('selectLanguage') selectLanguage!: LanguageComponent;
 
   correo = '';
   password = '';
 
-  constructor(private authService: AuthService, private router: Router
-    , private translate: TranslateService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -52,8 +48,4 @@ export class IngresoPage implements OnInit {
   registro(){
     this.router.navigate(['/registrarme']);
   }
-  navigateTheme() {
-    this.router.navigate(['/ingresar']);
-  }
-  
 }

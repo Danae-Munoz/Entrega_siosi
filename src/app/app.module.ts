@@ -5,13 +5,8 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [
-    CommonModule, 
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppComponent // Importar el componente standalone
-  ],
+  declarations: [AppComponent],
+  imports: [CommonModule ,BrowserModule, IonicModule.forRoot()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
